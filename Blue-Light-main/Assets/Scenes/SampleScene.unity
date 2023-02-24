@@ -786,6 +786,7 @@ MonoBehaviour:
   - {fileID: 5819379734055158913, guid: bc8fdb145d1ea224fa08ef09fe004948, type: 3}
   - {fileID: 2318900726776816987, guid: a436214290c505347aa04311823ec2d6, type: 3}
   - {fileID: 8661656128674303720, guid: 60b7180cafa841c45931ecb5ab0c468f, type: 3}
+  Boss: {fileID: 7199535749080558835, guid: d40eb9f0e96944fd4822ac7376f7b3d8, type: 3}
   spawnPoints:
   - {fileID: 1391458848}
   - {fileID: 1548063488}

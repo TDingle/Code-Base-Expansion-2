@@ -6,6 +6,7 @@ public class EnemySpawner : MonoBehaviour
 {
     public static EnemySpawner instance;
     [SerializeField] private GameObject[] enemies;
+    [SerializeField] private GameObject Boss;
     private List<GameObject> spawnedEnemies = new List<GameObject>();
     [SerializeField] private Transform[] spawnPoints;
     [SerializeField] private float spawnInterval = 2.0f;
@@ -21,6 +22,9 @@ public class EnemySpawner : MonoBehaviour
     {
         if (spawnedEnemies.Count > 0)
             return;
+        GameplayUIController.instance.SetWave();
+        if ((GameplayUIController.instance.GetWaveCount()) % 5 != 0)
+        {
 
         for (int i = 0; i < spawnPoints.Length; i++)
         {
@@ -29,8 +33,16 @@ public class EnemySpawner : MonoBehaviour
             spawnedEnemies.Add(newEnemy);
         }
 
+        }
+        else
+        {
+            Debug.Log("hello");
+            
+            GameObject Bossenemy = Instantiate(Boss, spawnPoints[2].position, Quaternion.identity);
+            spawnedEnemies.Add(Bossenemy);
+        }
         //ınform UI about wave number
-        GameplayUIController.instance.SetWave();
+        //GameplayUIController.instance.SetWave();
     }
 
     IEnumerator SpawnWave(float waitTime)
@@ -51,4 +63,6 @@ public class EnemySpawner : MonoBehaviour
         if(spawnedEnemies.Count == 0)
             StartCoroutine(SpawnWave(spawnInterval));
     }
+
+    
 }
