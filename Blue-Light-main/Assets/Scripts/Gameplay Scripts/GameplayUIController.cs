@@ -12,7 +12,7 @@ public class GameplayUIController : MonoBehaviour
 
     private int waveValue;
     private double scoreValue;
-    private int score = 100;
+    public int score = 100;
 
     private void Awake()
     {
@@ -50,6 +50,10 @@ public class GameplayUIController : MonoBehaviour
         else if (i == 3 || i == 4)
         {
             scoreValue += score;
+        }
+        else if(i == 5)
+        {
+            scoreValue += score * 4;
         }
 
         scoreText.text = "SCORE: " + (int)scoreValue;

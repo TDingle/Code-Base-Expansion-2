@@ -8,7 +8,7 @@ public class EnemyHealth : MonoBehaviour
 
     private Vector3 healthBarScale;
 
-    [SerializeField] private float health = 100;
+    [SerializeField] public float health = 100;
 
     [SerializeField] private GameObject hitEffect;
 
@@ -16,7 +16,7 @@ public class EnemyHealth : MonoBehaviour
 
     private DropCollectable dropCollectable;
 
-    [SerializeField] bool meteor, horizontal, pawn, random;
+    [SerializeField] bool meteor, horizontal, pawn, Boss;
     private int value;
 
     private void Awake()
